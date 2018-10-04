@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Update Car</title>
+	</head>
+	
+	<body>
+		<h2>Hello!</h2>
+		
+		<h3>Update Car</h3>
+		<form th:action="@{/car/update}" th:object="${car}" method="POST">
+			<input type="hidden" th:field="*{dealer}"/>
+			<input type="hidden" th:field="*{id}"/>
+			Brand:<br>
+			<input type="text" name="brand" th:value=${oldCar.brand} />
+			<br>
+			Type<br>
+			<input type="text" name="type" th:value=${oldCar.type} />
+			<br>
+			Price<br>
+			<input type="number" name="price" th:value=${oldCar.price} />
+			<br>
+			Amount<br>
+			<input type="amount" name="amount" th:value=${oldCar.amount} />
+			<br><br>
+			<button type="submit">Submit</button>
+		</form>
+	</body>
+</html>

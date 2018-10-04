@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Home</title>
+	</head>
+	
+	<body>
+		<h2>Hello!</h2>
+		
+		<h3>Tambah Dealer</h3>
+		<td><a th:href="@{/dealer/add}">Tambah</a></td>
+		
+		<h3>Cari Dealer berdasarkan ID</h3>
+		<form th:action="@{/dealer/view}" method="GET">
+			ID Dealer:<br>
+			<input type="text" name="dealerId"/>
+			<button type="submit">Cari</button>
+		</form>
+		<br>
+		<a th:href="@{/dealer/view/all/}">Lihat semua dealer</a>
+	</body>
+</html>
